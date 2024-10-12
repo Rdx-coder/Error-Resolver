@@ -1,5 +1,16 @@
+# Block all web crawlers from accessing specific directories
 User-agent: *
-Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
 
-Sitemap: https://errorresolver.com/sitemap.xml
+# Allow all web crawlers to access everything else
+Allow: /
+
+# Specific rules for Googlebot (Google's web crawler)
+User-agent: Googlebot
+Disallow: /no-google/
+
+# Link to the sitemap to help crawlers find all pages
+Sitemap: https://www.errorresolver.com/sitemap.xml
